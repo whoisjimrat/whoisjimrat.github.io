@@ -4,9 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jimrat</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+
+        /* Styles for the popup */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 100px;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            z-index: 9999;
+        }
+</style>
+    </style>
+
 </head>
 <body>
+
+    <div id="popup" class="popup">
+        <h2>YOUR COMPUTER HAS A VIRUS!</h2>
+        <p>Atettion you're windows computer has been infected with a virus please call this toll free number to talk to an assoicate the number is 555-JIM-RATT, The virus is currentlt taking your credit card info, Facebook login, tracking your keys and much more. Please call this toll free number to get rid of the virusAtettion you're windows computer has been infected with a virus please call this toll free number to talk to an assoicate the number is 555-JIM-RATT, The virus is currentlt taking your credit card info, Facebook login, tracking your keys and much more. Please call this toll free number to get rid of the virus
+            Atettion you're windows computer has been infected with a virus please call this toll free number to talk to an assoicate the number is 555-JIM-RATT, The virus is currentlt taking your credit card info, Facebook login, tracking your keys and much more. Please call this toll free number to get rid of the virus
+            Atettion you're windows computer has been infected with a virus please call this toll free number to talk to an assoicate the number is 555-JIM-RATT, The virus is currentlt taking your credit card info, Facebook login, tracking your keys and much more. Please call this toll free number to get rid of the virus
+            Atettion you're windows computer has been infected with a virus please call this toll free number to talk to an assoicate the number is 555-JIM-RATT, The virus is currentlt taking your credit card info, Facebook login, tracking your keys and much more. Please call this toll free number to get rid of the virus
+            Atettion you're windows computer has been infected with a virus please call this toll free number to talk to an assoicate the number is 555-JIM-RATT, The virus is currentlt taking your credit card info, Facebook login, tracking your keys and much more. Please call this toll free number to get rid of the virus </p>
+        <button onclick="closePopup()">.......ok</button>
+    </div>
+    
+    <script>
+        // Function to show the popup when the page loads
+        function showPopup() {
+            document.getElementById('popup').style.display = 'block';
+        }
+    
+        // Function to close the popup
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    
+        // Show the popup when the page loads
+        window.onload = function() {
+            showPopup();
+        };
+    </script>
+    <div class="container">
     <h1>Jimrat</h1>
-    <button">make a jimrat song@</button>
+    <pre> 
+          .;;:                    .;;:.                    .:;;.                   :;;:                    :;;:                   .;;:.        
+        +&&&&&&&&&x.;           +&&&&&&&&&x.;          :&&&&&&&&&X ;           X&&&&&&&&&+::           X&&&&&&&&&+:;          ;&&&&&&&&&X.+    
+      :  .X&&&&X   $&&+      .;   X&&&&X.  X&&x      ;   +&&&&X.  ;&&$.     ..   X&&&&+   $&&;      .:  .$&&&&+   $&&+     .;   x&&&&X.  x&&x  
+    :&$     ;.    ;&&&&$    :&&.    ;:    ;&&&&&.  .&&.    ::    :&&&&&.   ;&&     +.    x&&&&X    :&X     ;.    +&&&&X   .&&.    ;:    ;&&&&&.
+    &&&+         .&&&&&&$   $&&;          $&&&&&X  X&&X          X&&&&&$. :&&&;         .&&&&&&+  :&&&:         :&&&&&&+ .$&&+         .$&&&&&X
+    &&$:         +&&&&&&&: ;&&$:         +&&&&&&& .&&$;         ;&&&&&&&: x&&X:         X&&&&&&&  +&&X:         x&&&&&&&.:&&$;         ;&&&&&&&
+    ;             .+&&&&&: ;;              +&&&&&::;              ;$&&&&; X:             .x&&&&&. ;:              x&&&&&::;              +&&&&&
+                     ;$&&:                   ;$&&                   :$&&:                   ;&&$                    ;&&&.                  ;$&&
+    X$$$X;     ::      :+   X$$$X:     ::      :;  +&$$X;     .:.     .;  .$$$$X.     ::      :;   $$$$X:     :.      ::  X$$$X;     ::.     .;
+    .$&&&X    :&&&&&&&&x     X&&&$    :&&&&&&&&+    +&&&&     &&&&&&&&X    .$&&&$    :&&&&&&&&;    .$&&&X    +&&&&&&&&+    X&&&&.   :&&&&&&&&X 
+      ;&&&;   $&&&&&&$:       :&&&;  .&&&&&&&$:      :$&&X   $&&&&&&&:       ;&&&:  .&&&&&&&X.       +&&&.   &&&&&&&$.      :&&&;   $&&&&&&$:  
+        .x$  +&&&&&;.           .x$  +&&&&&+.          .;$. :&&&&&+.           :X+  x&&&&$;            .X$  $&&&&&;           .+$  +&&&&&+.    
+                                                                                                                                                 </pre>
+
+    <button onclick="generateSong(3, 2)">make a jimrat song</button>
+
+    <div id="lyrics"></div>
+
+    <script src="genlyric.js"></script>
+    <div class="container">
+    <pre> 
+          .;;:                    .;;:.                    .:;;.                   :;;:                    :;;:                   .;;:.        
+        +&&&&&&&&&x.;           +&&&&&&&&&x.;          :&&&&&&&&&X ;           X&&&&&&&&&+::           X&&&&&&&&&+:;          ;&&&&&&&&&X.+    
+      :  .X&&&&X   $&&+      .;   X&&&&X.  X&&x      ;   +&&&&X.  ;&&$.     ..   X&&&&+   $&&;      .:  .$&&&&+   $&&+     .;   x&&&&X.  x&&x  
+    :&$     ;.    ;&&&&$    :&&.    ;:    ;&&&&&.  .&&.    ::    :&&&&&.   ;&&     +.    x&&&&X    :&X     ;.    +&&&&X   .&&.    ;:    ;&&&&&.
+    &&&+         .&&&&&&$   $&&;          $&&&&&X  X&&X          X&&&&&$. :&&&;         .&&&&&&+  :&&&:         :&&&&&&+ .$&&+         .$&&&&&X
+    &&$:         +&&&&&&&: ;&&$:         +&&&&&&& .&&$;         ;&&&&&&&: x&&X:         X&&&&&&&  +&&X:         x&&&&&&&.:&&$;         ;&&&&&&&
+    ;             .+&&&&&: ;;              +&&&&&::;              ;$&&&&; X:             .x&&&&&. ;:              x&&&&&::;              +&&&&&
+                     ;$&&:                   ;$&&                   :$&&:                   ;&&$                    ;&&&.                  ;$&&
+    X$$$X;     ::      :+   X$$$X:     ::      :;  +&$$X;     .:.     .;  .$$$$X.     ::      :;   $$$$X:     :.      ::  X$$$X;     ::.     .;
+    .$&&&X    :&&&&&&&&x     X&&&$    :&&&&&&&&+    +&&&&     &&&&&&&&X    .$&&&$    :&&&&&&&&;    .$&&&X    +&&&&&&&&+    X&&&&.   :&&&&&&&&X 
+      ;&&&;   $&&&&&&$:       :&&&;  .&&&&&&&$:      :$&&X   $&&&&&&&:       ;&&&:  .&&&&&&&X.       +&&&.   &&&&&&&$.      :&&&;   $&&&&&&$:  
+        .x$  +&&&&&;.           .x$  +&&&&&+.          .;$. :&&&&&+.           :X+  x&&&&$;            .X$  $&&&&&;           .+$  +&&&&&+.    
+                                                                                                                                               
+    </pre>
+  </div>
 </body>
 </html>
