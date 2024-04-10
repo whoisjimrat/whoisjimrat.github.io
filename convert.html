@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Convert Image to ASCII</title>
+</head>
+<body>
+  <h1>JIMRAT urself......</h1>
+
+  <!-- Add a label element with for attribute pointing to input -->
+  <label for="file">Select an image</label>
+  <!-- Change the input value to empty string -->
+  <input type="file" accept="image/*" name="image" id="file" onchange="convertToAscii(event)">
+
+  <pre id="asciiOutput"></pre>
+
+  <script>
+    function convertToAscii(event) {
+      const width = 100; // Adjust width as needed
+      const file = event.target.files[0];
+
+      const reader = new FileReader();
+
+      reader.onload = function(event) {
+        const img = new Image();
+        img.onload = function() {
+          const canvas = document.createElement('canvas');
+          const ctx = canvas.getContext('2d');
+          const aspectRatio = img.height / img.width;
+          const newHeight = Math.floor(width * aspectRatio);
+          canvas.width = width;
+          canvas.height = newHeight;
+          ctx.drawImage(img, 0, 0, width, newHeight);
+          const imageData = ctx.getImageData(0, 0, width, newHeight);
+          let ascii = '';
+          for (let i = 0; i < imageData.data.length; i += 4) {
+            const r = imageData.data[i];
+            const g = imageData.data[i + 1];
+            const b = imageData.data[i + 2];
+            const brightness = Math.round(0.2126 * r + 0.7152 * g + 0.0722 * b);
+            const character = brightnessToCharacter(brightness);
+            ascii += character;
+            if ((i + 4) % (width * 4) === 0) {
+              ascii += '\n';
+            }
+          }
+          document.getElementById('asciiOutput').textContent = ascii;
+        };
+        img.src = event.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function brightnessToCharacter(brightness) {
+      const characters = '@%#*+=-:. ';
+      const interval = 256 / characters.length;
+      const index = Math.floor(brightness / interval);
+      return characters.charAt(index);
+    }
+  </script>
+</body>
+</html>
