@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rat in a Piano Store</title>
+<style>
+  pre {
+    font-family: monospace;
+    font-size: 16px;
+  }
+</style>
+</head>
+<body>
+<pre id="game"></pre>
+<script>
+  // Define the game map (using ASCII characters)
+  const map = `
+############################
+#                          #
+#                          #
+#                          #
+#                          #
+#                          #
+#                          #
+#                          #
+#                          #
+#                          #
+#                          #
+#                          #
+############################`;
+
+  // Convert the map string into an array of rows
+  const rows = map.trim().split('\n');
+
+  // Function to render the game
+  function render() {
+    document.getElementById('game').innerText = rows.join('\n');
+  }
+
+  // Initial game rendering
+  render();
+
+  // Player's starting position
+  let playerY = 10;
+  let playerX = 5; // Initial position is set further back
+
+  // Function to move the player
+  function movePlayer(dx, dy) {
+    // Calculate new player position
+    const newX = playerX + dx;
+    const newY = playerY + dy;
+
+    // Check if the new position is within bounds and not a wall
+    if (newY >= 0 && newY < rows.length && newX >= 0 && newX < rows[newY].length && rows[newY][newX] === ' ') {
+      // Update player's position
+      playerX = newX;
+      playerY = newY;
+
+      // Redraw the game
+      render();
+    }
+  }
+
+  // Function to handle jumping
+  let isJumping = false;
+  function jump() {
+    if (!isJumping) {
+      isJumping = true;
+      setTimeout(() => {
+        isJumping = false;
+        render();
+      }, 300); // Jump duration
+    }
+  }
+
+  // Function to update the game state
+  function updateGame() {
+    movePlayer(1, 0); // Move the player automatically to the right
+
+    // Check if the player is in front of a guitar
+    if (rows[playerY - 1][playerX + 1] === 'G') {
+      if (!isJumping) {
+        // If the player is not jumping and encounters a guitar, game over
+        alert('Game Over!');
+        clearInterval(gameLoop);
+      }
+    }
+  }
+
+  // Main game loop
+  const gameLoop = setInterval(() => {
+    updateGame();
+  }, 200); // Game speed
+
+  // Event listener for keyboard input
+  document.addEventListener('keydown', (event) => {
+    if (event.key === ' ' || event.key === 'Spacebar') {
+      jump();
+    }
+  });
+</script>
+</body>
+</html>
