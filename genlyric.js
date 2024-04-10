@@ -550,14 +550,14 @@ function generateSongStructure(numVerses, numChoruses, chain, startingStates) {
     let songStructure = "";
 
     // Generate chorus lyrics (a single set to be reused)
-    const chorusLyrics = addChordsToLyrics(generateLyrics(chain, startingStates[numVerses], 50, 20));
+    const chorusLyrics = addChordsToLyrics(generateLyrics(chain, startingStates[numVerses], 30, 20));
 
     // Add verses and choruses dynamically based on num_verses and num_choruses
     let verseIndex = 0;
     let chorusIndex = 0;
     for (let i = 0; i < numVerses + numChoruses; i++) {
         if (verseIndex < numVerses) {
-            const verseLyrics = generateLyrics(chain, startingStates[verseIndex], 100, 20);
+            const verseLyrics = generateLyrics(chain, startingStates[verseIndex], 50, 20);
             const verseWithChords = addChordsToLyrics(verseLyrics);
             songStructure += `Verse ${verseIndex + 1}:\n${verseWithChords}\n\n`;
             verseIndex++;
