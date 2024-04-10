@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>I DONT EVEN KNOW HOW TO READ</title>
+</head>
+<body>
+  <h1>jimrat_Library.txt</h1>
+
+  <pre>       |\      _,,,---,,_
+    ZZZzz /,`.-'`'    -.  ;-;;,_
+         |,4-  ) )-,_. ,\ (  `'-'
+        '---''(_/--'  `-'\_)  </pre>
+  <ul>
+    <!-- Script to generate list of book links -->
+    <script>
+      // Function to fetch filenames from the "books" directory
+      function getBookList() {
+        // This would require server-side code to access the directory
+        // For demonstration, let's assume we have the following list:
+        const bookArray = [
+  "LeJimRat.txt",       
+  "onthenatureofjimrat.txt",
+  "ModalRealismandTimeTravel.txt",
+  "thedialoguesofjimrat.txt",
+  "mythofjimrat.txt",    
+  "thejimrat.txt",
+  "najimrat.txt",         
+  "thejimrats.txt",
+  "norwegianjimrat.txt",   
+  "warandjimrat.txt"
+];
+        return bookArray;
+      }
+
+      // Generate list items for each book
+      const books = getBookList();
+      for (const book of books) {
+        document.write(`<li><a href="books/${book}">${book}</a></li>`);
+      }
+    </script>
+  </ul>
+
+  <pre>             .--.           .---.        .-.
+    .---|--|   .-.     | J |  .---. |~|    .--.
+ .--|===|Ji|---|_|--.__| I |--|:::| |~|-==-|==|---.
+ |%%|NT2|mr|===| |~~|%%| M |--|   |_|~|    |  |___|-.
+ |  |   |at|===| |==|  | R |  |:::|=| |    |JR|---|=|
+ |  |   |  |   |_|__|  | A |__|   | | |    |  |___| |
+ |~~|===|--|===|~|~~|%%|~T~|--|:::|=|~|----|==|---|=|
+ ^--^---'--^---^-^--^--^---'--^---^-^-^-==-^--^---^-'</pre>
+
+
+ <a href="index.html">take me back V(=^･ω･^=)v</a> 
+</body>
+</html>
