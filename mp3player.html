@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>the jim rat trilogy </title>
+<style>
+    body {
+        
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+
+<h1>the jim rat trilogy </h1>
+
+<select id="songSelect">
+    <option value="">Select a song</option>
+</select><br><br>
+
+<audio id="audioPlayer" controls>
+    Your browser does not support the audio element.
+</audio>
+
+<script>
+    const songSelect = document.getElementById('songSelect');
+    const audioPlayer = document.getElementById('audioPlayer');
+    const songsFolder = 'songs/';
+
+    // List of provided filenames
+    const filenames = [
+        "1jimratjimratbyjimrat01grapesong.mp3",
+        "1jimratjimratbyjimrat02indaground.mp3",
+        "1jimratjimratbyjimrat03putonmyeyez.mp3",
+        "1jimratjimratbyjimrat04rainsong.mp3",
+        "1jimratjimratbyjimrat05comarund.mp3",
+        "2jimratthethirdvienneseschool01onceinawhile.mp3",
+        "2jimratthethirdvienneseschool02ihateshoegaze.mp3",
+        "2jimratthethirdvienneseschool03light.mp3",
+        "2jimratthethirdvienneseschool04lookaway.mp3",
+        "2jimratthethirdvienneseschool05anythingatall.mp3",
+        "3jimratbigjimbookingthejimrattening01candles.mp3",
+        "3jimratbigjimbookingthejimrattening02movie.mp3",
+        "3jimratbigjimbookingthejimrattening03usedtoit.mp3",
+        "3jimratbigjimbookingthejimrattening04feelitoutsexy.mp3",
+        "3jimratbigjimbookingthejimrattening05willu.mp3"
+    ];
+
+    // Populate dropdown with filenames as options
+    filenames.forEach(filename => {
+        const option = document.createElement('option');
+        option.text = filename;
+        option.value = filename;
+        songSelect.appendChild(option);
+    });
+
+    // Event listener for song selection change
+    songSelect.addEventListener('change', function() {
+        const selectedSong = this.value;
+        if (selectedSong) {
+            audioPlayer.src = songsFolder + selectedSong;
+            audioPlayer.play();
+        } else {
+            audioPlayer.pause();
+        }
+    });
+</script>
+
+
+<a href="index.html">take me back V(=^･ω･^=)v</a> 
+
+</body>
+</html>
