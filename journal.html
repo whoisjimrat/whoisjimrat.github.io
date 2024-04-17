@@ -12,51 +12,54 @@
 </style>
 </head>
 <body>
-    <script>
-        // Fetch the text file
-        fetch('your_text_file.txt')
-          .then(response => response.text())
-          .then(text => {
-            // Split the text into pages of 1000 characters
-            const pages = [];
-            for (let i = 0; i < text.length; i += 1000) {
-              pages.push(text.substring(i, i + 1000));
-            }
-            
-            let currentPage = 0;
-      
-            // Function to display current page
-            function displayPage() {
-              document.getElementById('text-content').textContent = pages[currentPage];
-            }
-      
-            // Function to navigate to previous page
-            function prevPage() {
-              if (currentPage > 0) {
-                currentPage--;
-                displayPage();
-              }
-            }
-      
-            // Function to navigate to next page
-            function nextPage() {
-              if (currentPage < pages.length - 1) {
-                currentPage++;
-                displayPage();
-              }
-            }
-      
-            // Initial display of the first page
-            displayPage();
-          })
-          .catch(error => console.error('Error fetching text file:', error));
-      </script>
 <div class="text-container">
   <p id="text-content"></p>
-  <button onclick="prevPage()">Previous</button>
-  <button onclick="nextPage()">Next</button>
+  <button id="prev-btn">Previous</button>
+  <button id="next-btn">Next</button>
 </div>
 
+<script>
+  // Fetch the text file
+  fetch('longart.txt')
+    .then(response => response.text())
+    .then(text => {
+      // Split the text into pages of 1000 characters
+      const pages = [];
+      for (let i = 0; i < text.length; i += 1000) {
+        pages.push(text.substring(i, i + 1000));
+      }
+      
+      let currentPage = 0;
 
+      // Function to display current page
+      function displayPage() {
+        document.getElementById('text-content').textContent = pages[currentPage];
+      }
+
+      // Function to navigate to previous page
+      function prevPage() {
+        if (currentPage > 0) {
+          currentPage--;
+          displayPage();
+        }
+      }
+
+      // Function to navigate to next page
+      function nextPage() {
+        if (currentPage < pages.length - 1) {
+          currentPage++;
+          displayPage();
+        }
+      }
+
+      // Initial display of the first page
+      displayPage();
+
+      // Event listeners for buttons
+      document.getElementById('prev-btn').addEventListener('click', prevPage);
+      document.getElementById('next-btn').addEventListener('click', nextPage);
+    })
+    .catch(error => console.error('Error fetching text file:', error));
+</script>
 </body>
 </html>
