@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1101001 100000 1101100 1101111 1110110 1100101 100000 1101010 1101001 1101101 100000 1110010 1100001 1110100</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    input[type="text"] {
+        padding: 10px;
+        font-size: 16px;
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+    }
+    #binary-output {
+        font-size: 16px;
+        color: blue;
+    }
+</style>
+</head>
+<body>
+    <h1>convert text to binary to save the world</h1>
+    <input type="text" placeholder="type here stupid" id="input-text" onkeyup="showBinary()">
+    <div id="binary-output"></div>
+
+    <script>
+        function showBinary() {
+            var inputText = document.getElementById("input-text").value;
+            var binaryOutput = document.getElementById("binary-output");
+
+            // Convert each character to binary
+            var binaryString = "";
+            for (var i = 0; i < inputText.length; i++) {
+                var charCode = inputText.charCodeAt(i);
+                binaryString += charCode.toString(2) + " ";
+            }
+
+            binaryOutput.textContent = "as it was once said by jimrat: " + binaryString;
+        }
+    </script>
+
+
+<a href="index.html">take me back V(=^･ω･^=)v</a> 
+</body>
+</html>
